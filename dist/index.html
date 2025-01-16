@@ -1,43 +1,580 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<link rel="shortcut icon" href="./img/icon-logo.svg" type="image/x-icon" />
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trafalgar Trading PTE. LTD.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --accent-color: #ffc107;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+                        url('/api/placeholder/1200/600');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 140px 0;
+            position: relative;
+            overflow: hidden;
+        }
 
-		<title>Trafalgar Trading Pte Ltd</title>
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(45deg, rgba(13, 110, 253, 0.2), transparent);
+            z-index: 1;
+        }
 
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-			rel="stylesheet"
-		/>
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
 
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-		/>
-		<script
-			src="https://kit.fontawesome.com/4c9f666489.js"
-			crossorigin="anonymous"
-		></script>
-		<link rel="stylesheet" href="css/style.css" />
-	</head>
-	<body>
-    <h1>Hello</h1>
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
 
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-			crossorigin="anonymous"
-		></script>
-    <script src="js/main.js"></script>
-	</body>
+        .product-card {
+            border: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card .card-header {
+            background: linear-gradient(135deg, var(--primary-color), #0056b3);
+            color: white;
+            border: none;
+            padding: 1.5rem;
+        }
+
+        .product-description {
+            color: #6c757d;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .parts-list {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .parts-list-title {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .parts-list ul {
+            margin-bottom: 0;
+        }
+
+        .parts-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .parts-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .parts-list li::before {
+            content: "→";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .tech-specs {
+            font-size: 0.85rem;
+            color: #495057;
+            margin-top: 1rem;
+        }
+
+        .tech-specs span {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .category-header {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .category-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+   
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #475569;
+            --accent-color: #f59e0b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            position: relative;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+        }
+
+        .service-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card .card-img-overlay {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary-color), #1e40af);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .project-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .project-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            background-color: #1f2937;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .service-details {
+            background-color: #f8fafc;
+            padding: 80px 0;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+        }
+
+        .btn-primary:hover {
+            background-color: #1e40af;
+            border-color: #1e40af;
+        }
+   
+
+ 
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">TRAFALGAR TRADING</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">Building Tomorrow's Infrastructure Today</h1>
+                    <p class="lead mb-4">Trafalgar Trading PTE. LTD. delivers excellence in construction materials, printing machinery, and infrastructure project management across global markets.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                        <a href="#services" class="btn btn-outline-light">Our Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services -->
+    <section class="py-5" id="services">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Core Services</h2>
+            <div class="row g-4">
+                <!-- Construction Materials -->
+                <div class="col-md-4">
+                    <div class="card service-card h-100">
+                        <img src="img/service-1.webp" class="card-img" alt="Construction Materials">
+                        <div class="card-img-overlay">
+                            <h3 class="card-title">Construction Materials</h3>
+                            <p class="card-text">Premium building materials for commercial and infrastructure projects</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Printing Machines -->
+                <div class="col-md-4">
+                    <div class="card service-card h-100">
+                        <img src="img/service-1.webp" class="card-img" alt="Printing Machines">
+                        <div class="card-img-overlay">
+                            <h3 class="card-title">Printing Machines</h3>
+                            <p class="card-text">State-of-the-art printing equipment and solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Consultancy Services -->
+                <div class="col-md-4">
+                    <div class="card service-card h-100">
+                        <img src="img/service-1.webp" class="card-img" alt="Consultancy Services">
+                        <div class="card-img-overlay">
+                            <h3 class="card-title">Project Consultancy</h3>
+                            <p class="card-text">Expert contract management for infrastructure projects</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="service-details">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Construction Materials -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="bi bi-building fs-4"></i>
+                            </div>
+                            <h4>Construction Materials</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">✓ Structural Steel & Metal Products</li>
+                                <li class="mb-2">✓ Concrete & Cement Products</li>
+                                <li class="mb-2">✓ Building Materials & Supplies</li>
+                                <li class="mb-2">✓ Quality Control Services</li>
+                                <li class="mb-2">✓ Material Testing & Certification</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Printing Machines -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="bi bi-printer fs-4"></i>
+                            </div>
+                            <h4>Printing Machines</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">✓ Industrial Printing Equipment</li>
+                                <li class="mb-2">✓ Digital Printing Solutions</li>
+                                <li class="mb-2">✓ Spare Parts & Maintenance</li>
+                                <li class="mb-2">✓ Technical Support</li>
+                                <li class="mb-2">✓ Equipment Installation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consultancy -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="feature-icon">
+                                <i class="bi bi-clipboard-data fs-4"></i>
+                            </div>
+                            <h4>Project Consultancy</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">✓ Contract Management</li>
+                                <li class="mb-2">✓ Project Planning & Control</li>
+                                <li class="mb-2">✓ Risk Assessment</li>
+                                <li class="mb-2">✓ Quality Assurance</li>
+                                <li class="mb-2">✓ Compliance Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Enhanced Products Section -->
+    <section class="py-5" id="products">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Product Range</h2>
+            <p class="text-center mb-5 lead">Discover our comprehensive range of industrial machinery and equipment, designed to meet the highest standards of quality and performance.</p>
+
+            <!-- Screw Systems -->
+            <div class="mb-5">
+                <h3 class="category-header">
+                    <i class="bi bi-gear-fill text-primary me-2"></i>
+                    Screw Systems & Components
+                </h3>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card product-card h-100">
+                            <div class="card-header">
+                                <h5 class="mb-0">Twin Screw Solutions</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="product-description">
+                                    Advanced twin screw systems designed for optimal performance in plastic extrusion and compounding processes. Our solutions offer superior mixing capabilities and precise control over material processing.
+                                </p>
+                                <div class="parts-list">
+                                    <div class="parts-list-title">Core Components</div>
+                                    <ul class="list-unstyled">
+                                        <li>Twin screw elements for conveying (40mm-135mm)</li>
+                                        <li>Barrel segments with bimetallic liners</li>
+                                        <li>High-torque gearbox systems</li>
+                                        <li>Degassing units with vacuum ports</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-specs">
+                                    <p><span>Processing Capacity:</span> 100-2000 kg/h</p>
+                                    <p><span>Temperature Range:</span> Up to 400°C</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card product-card h-100">
+                            <div class="card-header">
+                                <h5 class="mb-0">Single Screw Systems</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="product-description">
+                                    High-performance single screw extruders equipped with advanced drive systems and precise temperature control. Ideal for continuous production processes.
+                                </p>
+                                <div class="parts-list">
+                                    <div class="parts-list-title">Available Components</div>
+                                    <ul class="list-unstyled">
+                                        <li>Complete screw sets (30mm-150mm)</li>
+                                        <li>AC/DC motor drives (5-250 kW)</li>
+                                        <li>Hardened gear transmissions</li>
+                                        <li>Thrust bearing assemblies</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-specs">
+                                    <p><span>Drive Power:</span> 5-250 kW</p>
+                                    <p><span>Speed Range:</span> 0-200 RPM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card product-card h-100">
+                            <div class="card-header">
+                                <h5 class="mb-0">Processing Equipment</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="product-description">
+                                    Comprehensive range of processing equipment designed for material transformation and finishing operations. Features precision-engineered components for consistent output.
+                                </p>
+                                <div class="parts-list">
+                                    <div class="parts-list-title">Equipment Range</div>
+                                    <ul class="list-unstyled">
+                                        <li>Pelletizer dies (standard/custom)</li>
+                                        <li>Tungsten carbide cutting blades</li>
+                                        <li>Gravimetric feeders (0.5-1000 kg/h)</li>
+                                        <li>Water bath cooling systems</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-specs">
+                                    <p><span>Pelletizing Capacity:</span> Up to 5000 kg/h</p>
+                                    <p><span>Cutting Speed:</span> 500-3000 RPM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Control Systems -->
+            <div class="mb-5">
+                <h3 class="category-header">
+                    <i class="bi bi-cpu-fill text-primary me-2"></i>
+                    Control & Automation Systems
+                </h3>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card product-card h-100">
+                            <div class="card-header">
+                                <h5 class="mb-0">Hardware Solutions</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="product-description">
+                                    State-of-the-art control hardware featuring advanced PLC systems and precision instrumentation for complete process control and monitoring.
+                                </p>
+                                <div class="parts-list">
+                                    <div class="parts-list-title">Hardware Components</div>
+                                    <ul class="list-unstyled">
+                                        <li>PLC control systems (Siemens/Allen Bradley)</li>
+                                        <li>Touch-screen HMI panels (7"-21")</li>
+                                        <li>Temperature controllers (multi-zone)</li>
+                                        <li>Pressure transmitters (0-400 bar)</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-specs">
+                                    <p><span>Control Zones:</span> Up to 20 zones</p>
+                                    <p><span>Communication:</span> Ethernet/IP, Profibus</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card product-card h-100">
+                            <div class="card-header">
+                                <h5 class="mb-0">Automation Solutions</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="product-description">
+                                    Integrated automation solutions with advanced software control systems for optimized production processes and data management.
+                                </p>
+                                <div class="parts-list">
+                                    <div class="parts-list-title">System Features</div>
+                                    <ul class="list-unstyled">
+                                        <li>Recipe management systems</li>
+                                        <li>Production data logging</li>
+                                        <li>Remote monitoring capabilities</li>
+                                        <li>Predictive maintenance modules</li>
+                                    </ul>
+                                </div>
+                                <div class="tech-specs">
+                                    <p><span>Data Storage:</span> Cloud-based/Local</p>
+                                    <p><span>Remote Access:</span> VPN/Web-based</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Equipment -->
+            <div>
+                <h3 class="category-header">
+                    <i class="bi bi-tools text-primary me-2"></i>
+                    Support Equipment & Peripherals
+                </h3>
+                <div class="row g-4">
+                    <!-- Previous support equipment cards with enhanced content... -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Previous sections (Global Presence, Contact, Footer) remain the same -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

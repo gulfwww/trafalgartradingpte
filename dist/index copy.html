@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="shortcut icon" href="./img/icon-logo.svg" type="image/x-icon" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Trafalgar Trading Pte Ltd</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+		<script src="https://kit.fontawesome.com/4c9f666489.js" crossorigin="anonymous"></script>
+		<style>
+			:root {
+				--primary-color: #0d6efd;
+				--secondary-color: #6c757d;
+				--accent-color: #ffc107;
+			}
+
+			body {
+				font-family: 'Poppins', sans-serif;
+			}
+
+			.service-card {
+				border: none;
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+				transition: all 0.3s ease;
+				border-radius: 12px;
+				overflow: hidden;
+			}
+
+			.service-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+			}
+
+			.service-card .card-header {
+				background: linear-gradient(135deg, var(--primary-color), #0056b3);
+				color: white;
+				border: none;
+				padding: 1.5rem;
+			}
+
+			.equipment-list {
+				background: #f8f9fa;
+				border-radius: 8px;
+				padding: 1rem;
+				margin-top: 1rem;
+			}
+
+			.equipment-list li {
+				margin-bottom: 0.5rem;
+				padding-left: 1.5rem;
+				position: relative;
+			}
+
+			.equipment-list li::before {
+				content: "•";
+				color: var(--primary-color);
+				position: absolute;
+				left: 0.5rem;
+				font-size: 1.2em;
+			}
+
+			.category-header {
+				position: relative;
+				padding-bottom: 1rem;
+				margin-bottom: 2rem;
+				text-align: center;
+			}
+
+			.category-header::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 60px;
+				height: 3px;
+				background: var(--primary-color);
+				border-radius: 2px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Products Section -->
+		<section class="py-5" id="products">
+			<div class="container">
+				<h2 class="text-center mb-5">Our Core Services</h2>
+				<p class="text-center mb-5 lead">Delivering premium construction materials, advanced printing solutions, and expert consultancy services for infrastructure projects.</p>
+
+				<!-- Primary Services -->
+				<div class="mb-5">
+					<h3 class="category-header">Primary Services</h3>
+					<div class="row g-4">
+						<!-- Construction Materials -->
+						<div class="col-md-4">
+							<div class="card service-card h-100">
+								<div class="card-header">
+									<h5 class="mb-0">
+										<i class="bi bi-building me-2"></i>
+										Construction Materials
+									</h5>
+								</div>
+								<div class="card-body">
+									<p class="text-muted mb-4">Premium quality construction materials for your projects, ensuring durability and reliability in every application.</p>
+									<div class="equipment-list">
+										<h6 class="text-primary fw-semibold mb-3">Materials Include:</h6>
+										<ul class="list-unstyled">
+											<li>High-grade construction supplies</li>
+											<li>Industrial-grade materials</li>
+											<li>Quality-tested products</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Printing Machines -->
+						<div class="col-md-4">
+							<div class="card service-card h-100">
+								<div class="card-header">
+									<h5 class="mb-0">
+										<i class="bi bi-printer me-2"></i>
+										Printing Machines
+									</h5>
+								</div>
+								<div class="card-body">
+									<p class="text-muted mb-4">State-of-the-art printing equipment and solutions for professional printing needs.</p>
+									<div class="equipment-list">
+										<h6 class="text-primary fw-semibold mb-3">Features:</h6>
+										<ul class="list-unstyled">
+											<li>Advanced printing technology</li>
+											<li>Professional-grade equipment</li>
+											<li>Comprehensive solutions</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Consultancy Services -->
+						<div class="col-md-4">
+							<div class="card service-card h-100">
+								<div class="card-header">
+									<h5 class="mb-0">
+										<i class="bi bi-people me-2"></i>
+										Consultancy Services
+									</h5>
+								</div>
+								<div class="card-body">
+									<p class="text-muted mb-4">Expert contract management and consultancy for infrastructure projects.</p>
+									<div class="equipment-list">
+										<h6 class="text-primary fw-semibold mb-3">Services Include:</h6>
+										<ul class="list-unstyled">
+											<li>Project planning & management</li>
+											<li>Infrastructure consulting</li>
+											<li>Contract management</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Specialized Equipment -->
+				<div class="mb-5">
+					<h3 class="category-header">Specialized Equipment</h3>
+					<div class="row g-4">
+						<!-- Screw Systems -->
+						<div class="col-md-4">
+							<div class="card service-card h-100">
+								<div class="card-header">
+									<h5 class="mb-0">
+										<i class="bi bi-gear me-2"></i>
+										Screw Systems
+									</h5>
+								</div>
+								<div class="card-body">
+									<div class="equipment-list">
+										<ul class="list-unstyled">
+											<li>Twin screw elements conveying</li>
+											<li>Twin screw barrels + in liners set</li>
+											<li>Screw shafts</li>
+											<li>Single screw set with motor and gear box</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Processing Equipment -->
+						<div class="col-md-4">
+							<div class="card service-card h-100">
+								<div class="card-header">
+									<h5 class="mb-0">
+										<i class="bi bi-tools me-2"></i>
+										Processing Equipment
+									</h5>
+								</div>
+								<div class="card-body">
+									<div class="equipment-list">
+										<ul class="list-unstyled">
+											<li>Set of pelletizer dies</li>
+											<li>Cutting blades</li>
+											<li>Twin screw gearbox</li>
+											<li>Twin screw elements degassing</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Control Systems -->
+						<div class="col-md-4">
+							<div class="card service-card h-100">
+								<div class="card-header">
+									<h5 class="mb-0">
+										<i class="bi bi-cpu me-2"></i>
+										Control Systems
+									</h5>
+								</div>
+								<div class="card-body">
+									<div class="equipment-list">
+										<ul class="list-unstyled">
+											<li>Loss-in-weight scales hoppers</li>
+											<li>Host electric hardware</li>
+											<li>Software cabinet</li>
+											<li>Peripherals/Steel frames/Others</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+	</body>
+</html>
