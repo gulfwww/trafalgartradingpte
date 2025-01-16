@@ -1,0 +1,152 @@
+:root {
+  --blue-clr: #0d6efd;
+  --gray-clr: #f8f9fa;
+  --dark-gray-clr: #f8fafc;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-link:hover {
+  color: var(--blue-clr);
+}
+
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+              url('../img/hero.webp');
+  background-size: cover;
+  background-position: center;
+  padding: 140px 0;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(45deg, rgba(13, 110, 253, 0.25), transparent);
+  z-index: 1;
+}
+
+.hero-content {
+  z-index: 2;
+}
+
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+ .service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.service-card .card-img-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+}
+
+.service-card-details, .product-card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.service-card-details:hover, .product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.category-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--blue-clr);
+  border-radius: 2px;
+}
+
+.equipment-list li::before {
+  content: "•";
+  color: var(--blue-clr);
+  position: absolute;
+  left: 0.5rem;
+  font-size: 1.2em;
+}
+
+.product-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.parts-list-title {
+  letter-spacing: 0.5px;
+}
+
+ .parts-list li::before {
+  content: "→";
+  color: var(--blue-clr);
+  position: absolute;
+  left: 0;
+}
+
+.tech-specs {
+  color: #495057;
+}
+
+.contact-detail span {
+	line-height: 1.8;
+}
+
+.contact-detail strong {
+	font-size: 18px;
+	font-weight: 900;
+}
+
+
+.btn:hover {
+  background-color: var(--blue-clr)!important;
+  border-color: var(--blue-clr) !important;
+  color: white !important;
+  transition: all 0.3s ease;
+}
+
+/* Global Class */
+.rounded-12 {
+  border-radius: 0.75rem;
+}
+
+.text-gray {
+  color: var(--gray-clr);
+}
+
+.bg-gray {
+  background-color: var(--gray-clr);
+}
+
+.bg-dark-gray {
+  background-color: var(--dark-gray-clr);
+}
+
+.bg-blue-gradient {
+  background: linear-gradient(135deg, var(--blue-clr), #0056b3);
+}
+
+.py-80 {
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+}
+
+.mb-32 {
+  margin-bottom: 2rem;
+}
+
+
+.fs-17 {
+  font-size: 1.063rem;
+}
