@@ -8,6 +8,12 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.navbar-brand img {
+  width: 320px;
+  height: auto;
+  object-fit: cover;
+}
+
 .nav-link:hover {
   color: var(--blue-clr);
 }
@@ -146,7 +152,25 @@ body {
   margin-bottom: 2rem;
 }
 
-
 .fs-17 {
   font-size: 1.063rem;
+}
+
+@media screen and (max-width: 550px) {
+  .navbar-brand img {
+    width: 220px;
+  }
+
+  .hero-section {
+    padding: 60px 0;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section p {
+    font-size: 00.938rem;
+    line-height: 1.5;
+  }
 }
