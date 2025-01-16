@@ -1,0 +1,16 @@
+{
+	"name": "trafalgartradingpte",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"deploy": "gh-pages -d dist"
+	},
+	"keywords": [],
+	"author": "Mohamed Gumaa",
+	"homepage": "https://gulfwww.github.io/tradehawk-international",
+	"license": "ISC",
+	"description": "This repository contains the source code for the Tradehawk International LTD Business Model website. The website is built using basic HTML, CSS, JavaScript, and Bootstrap library to create a modern, responsive, and user-friendly interface.",
+	"dependencies": {
+		"gh-pages": "^6.3.0"
+	}
+}
